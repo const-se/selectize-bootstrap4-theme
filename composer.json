@@ -1,7 +1,7 @@
 {
   "name": "const-se/selectize-bootstrap4-theme",
   "type": "library",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "Apache-2.0",
   "description": "Selectize Theme for Bootstrap 4",
   "keywords": [
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/const-se/selectize-bootstrap4-theme",
   "extra": {
     "branch-alias": {
-      "dev-master": "1.0.x-dev"
+      "dev-master": "1.2.x-dev"
     }
   },
   "support": {
