@@ -1,0 +1,48 @@
+{
+  "name": "selectize-bootstrap4-theme",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "main": "gulpfile.js",
+  "description": "Selectize Theme for Bootstrap 4",
+  "keywords": [
+    "bootstrap",
+    "bootstrap4",
+    "css",
+    "sass",
+    "scss",
+    "select",
+    "selectize",
+    "theme",
+    "web"
+  ],
+  "author": "Constantine Seleznyoff (const.seoff@gmail.com)",
+  "homepage": "https://github.com/const-se/selectize-bootstrap4-theme#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
+  "peerDependencies": {
+    "selectize": "^0.12.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "lodash": "^4.17.10",
+    "selectize": "^0.12.6"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/const-se/selectize-bootstrap4-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/const-se/selectize-bootstrap4-theme/issues"
+  },
+  "sass": "scss/selectize.bootstrap4.scss",
+  "style": "dist/css/selectize.bootstrap4.css"
+}

@@ -1,0 +1,260 @@
+/*!
+ * Selectize Theme for Bootstrap 4
+ * Version 1.0.0
+ * Copyright 2018 Constantine Seleznyoff <const.seoff@gmail.com>
+ * Licensed under the Apache License, Version 2.0 (https://github.com/const-se/selectize-bootstrap4-theme/blob/master/LICENSE)
+ */
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "variables";
+
+.form-control {
+  &.selectize-control {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    position: relative;
+    transition: none;
+
+    .selectize-input {
+      background-clip: padding-box;
+      background-color: $input-bg;
+      border: $input-border-width solid $input-border-color;
+      cursor: text;
+      display: inline-block;
+      height: 100%;
+      overflow: hidden;
+      padding: $input-padding-y $input-padding-x;
+      position: relative;
+      width: 100%;
+      @include border-radius($input-border-radius);
+      @include box-shadow($input-box-shadow);
+      @include form-control-focus();
+      @include transition($input-transition);
+
+      * {
+        display: -moz-inline-stack;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: baseline;
+      }
+
+      input {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        display: inline-block !important;
+        line-height: inherit !important;
+        margin: $selectize-caret-margin !important;
+        max-height: none !important;
+        max-width: 100% !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        text-indent: 0 !important;
+        -webkit-user-select: auto !important;
+
+        @include hover-focus {
+          outline: none !important;
+        }
+
+        &::-ms-clear {
+          display: none;
+        }
+
+        &::placeholder {
+          color: $input-placeholder-color;
+          opacity: 1;
+        }
+      }
+
+      &.dropdown-active {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .selectize-dropdown {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      display: none;
+      height: auto;
+      left: 0;
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      transition: none;
+      width: 100% !important;
+      z-index: $zindex-dropdown;
+
+      .selectize-dropdown-content {
+        background-color: $dropdown-bg;
+        background-clip: padding-box;
+        border: $input-border-width solid $input-border-color;
+        border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius;
+        border-top-width: 0;
+        color: $body-color;
+        font-size: $font-size-base;
+        max-height: $selectize-dropdown-max-height;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: $dropdown-padding-y 0;
+        position: relative;
+        text-align: left;
+        -webkit-overflow-scrolling: touch;
+        @include box-shadow($dropdown-box-shadow);
+
+        .option,
+        .create {
+          background-color: transparent;
+          color: $dropdown-link-color;
+          font-weight: $font-weight-normal;
+          padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+          text-align: inherit;
+          white-space: nowrap;
+        }
+
+        .create {
+          cursor: pointer;
+        }
+
+        .option {
+          @include hover-focus {
+            color: $selectize-dropdown-item-color;
+            text-decoration: none;
+            @include gradient-bg($selectize-item-bg-color);
+          }
+
+          &.active,
+          &:active {
+            color: $selectize-dropdown-item-color;
+            text-decoration: none;
+            @include gradient-bg($selectize-item-bg-color);
+          }
+
+          &.disabled,
+          &:disabled,
+          &[data-disabled] {
+            background-color: transparent;
+            color: $selectize-dropdown-item-color-disabled;
+
+            @if $enable-gradients {
+              background-image: none;
+            }
+          }
+
+          &[data-selectable] {
+            cursor: pointer;
+            overflow: hidden;
+          }
+        }
+
+        .optgroup {
+          border-bottom: 1px solid $selectize-dropdown-divider-bg-color;
+          margin-bottom: $nav-divider-margin-y;
+          padding-bottom: $nav-divider-margin-y;
+
+          &:last-child {
+            border-bottom-width: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+
+          .optgroup-header {
+            color: $selectize-dropdown-item-header-color;
+            display: block;
+            font-size: $font-size-sm;
+            margin-bottom: 0;
+            padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    &:disabled,
+    &[readonly] {
+      .selectize-input {
+        background-color: $input-disabled-bg;
+        opacity: 1;
+      }
+    }
+
+    &.single {
+      &:after {
+        $selectize-arrow-width-half: $selectize-arrow-width / 2;
+        $selectize-arrow-height: 1.732050808 * $selectize-arrow-width-half;
+
+        border-color: $selectize-caret-color transparent transparent transparent;
+        border-style: solid;
+        border-width: $selectize-arrow-height $selectize-arrow-width-half 0 $selectize-arrow-width-half;
+        content: '';
+        display: block;
+        height: 0;
+        margin-top: -1 * $selectize-arrow-height / 2;
+        position: absolute;
+        top: 50%;
+        right: $input-padding-x;
+        width: 0;
+      }
+
+      .selectize-input {
+        padding-right: calc(#{$input-padding-x} + #{$selectize-arrow-width});
+      }
+    }
+
+    &.multi {
+      height: auto;
+      min-height: $input-height;
+
+      .selectize-input {
+        height: auto;
+        min-height: 100%;
+        overflow: auto;
+
+        .item {
+          background-color: $selectize-item-bg-color;
+          color: color-yiq($selectize-item-bg-color);
+          display: inline-block;
+          font-size: $badge-font-size;
+          height: 100%;
+          line-height: 1;
+          margin: $selectize-item-margin;
+          padding: $badge-padding-y $badge-padding-x;
+          text-align: center;
+          vertical-align: middle;
+          white-space: nowrap;
+          @include border-radius($badge-border-radius);
+        }
+      }
+    }
+  }
+}
+
+.form-control-lg {
+  &.selectize-control {
+    padding: 0;
+
+    .selectize-input {
+      padding: $input-padding-y-lg $input-padding-x-lg;
+      @include border-radius($input-border-radius-lg);
+    }
+  }
+}
+
+.form-control-sm {
+  &.selectize-control {
+    padding: 0;
+
+    .selectize-input {
+      padding: $input-padding-y-sm $input-padding-x-sm;
+      @include border-radius($input-border-radius-sm);
+    }
+  }
+}

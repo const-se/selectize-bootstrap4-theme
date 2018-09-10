@@ -1,0 +1,34 @@
+{
+  "name": "const-se/selectize-bootstrap4-theme",
+  "type": "library",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "description": "Selectize Theme for Bootstrap 4",
+  "keywords": [
+    "bootstrap",
+    "bootstrap4",
+    "css",
+    "sass",
+    "scss",
+    "select",
+    "selectize",
+    "theme",
+    "web"
+  ],
+  "authors": [
+    {
+      "name": "Constantine Seleznyoff",
+      "email": "const.seoff@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/const-se/selectize-bootstrap4-theme",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "support": {
+    "email": "const.seoff@gmail.com",
+    "issues": "https://github.com/const-se/selectize-bootstrap4-theme/issues"
+  }
+}
