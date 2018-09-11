@@ -1,11 +1,11 @@
 $selectize-arrow-width: .625rem !default;
+$selectize-arrow-color: $body-color !default;
 
-$selectize-caret-color: $body-color !default;
 $selectize-caret-margin: 0 2px 0 0 !default;
 
-$selectize-dropdown-max-height: 14.5rem !default;
-
 $selectize-dropdown-divider-bg-color: $dropdown-divider-bg !default;
+
+$selectize-dropdown-max-height: 14.5rem !default;
 
 $selectize-dropdown-item-bg-color: $dropdown-link-active-bg !default;
 $selectize-dropdown-item-color: $dropdown-link-active-color !default;

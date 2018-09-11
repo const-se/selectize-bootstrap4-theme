@@ -1,14 +1,26 @@
 /*!
- * Selectize Theme for Bootstrap 4
- * Version 1.2.1
+ * Selectize Theme for Bootstrap 4 v2.0.0
+ *
  * Copyright 2018 Constantine Seleznyoff <const.seoff@gmail.com>
- * Licensed under the Apache License, Version 2.0 (https://github.com/const-se/selectize-bootstrap4-theme/blob/master/LICENSE)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 @import "variables";
+@import "mixins";
 
 .form-control {
   &.selectize-control {
@@ -191,7 +203,7 @@
         $selectize-arrow-width-half: $selectize-arrow-width / 2;
         $selectize-arrow-height: 1.732050808 * $selectize-arrow-width-half;
 
-        border-color: $selectize-caret-color transparent transparent transparent;
+        border-color: $selectize-arrow-color transparent transparent transparent;
         border-style: solid;
         border-width: $selectize-arrow-height $selectize-arrow-width-half 0 $selectize-arrow-width-half;
         content: '';
