@@ -2,10 +2,17 @@
 
 $selectize-input-bg: $input-bg !default;
 $selectize-input-bg-disabled: $input-disabled-bg !default;
+$selectize-input-bg-focus: $input-focus-bg !default;
 $selectize-input-border-color: $input-border-color !default;
+$selectize-input-border-color-focus: $input-focus-border-color !default;
 $selectize-input-border-radius: $input-border-radius !default;
 $selectize-input-border-width: $input-border-width !default;
 $selectize-input-box-shadow: $input-box-shadow !default;
+$selectize-input-box-shadow-focus: $input-focus-box-shadow !default;
+$selectize-input-color: $input-color !default;
+$selectize-input-color-disabled: $selectize-input-color !default;
+$selectize-input-color-focus: $input-focus-color !default;
+$selectize-input-font-size: $font-size-base !default;
 $selectize-input-height: $input-height !default;
 $selectize-input-padding-x: $input-padding-x !default;
 $selectize-input-padding-y: $input-padding-y !default;
@@ -15,12 +22,16 @@ $selectize-input-transition: $input-transition !default;
 // Large Input
 
 $selectize-input-border-radius-lg: $input-border-radius-lg !default;
+$selectize-input-font-size-lg: $font-size-lg !default;
+$selectize-input-height-lg: $input-height-lg !default;
 $selectize-input-padding-y-lg: $input-padding-y-lg !default;
 $selectize-input-padding-x-lg: $input-padding-x-lg !default;
 
 // Small Input
 
 $selectize-input-border-radius-sm: $input-border-radius-sm !default;
+$selectize-input-font-size-sm: $font-size-sm !default;
+$selectize-input-height-sm: $input-height-sm !default;
 $selectize-input-padding-y-sm: $input-padding-y-sm !default;
 $selectize-input-padding-x-sm: $input-padding-x-sm !default;
 
@@ -39,6 +50,7 @@ $selectize-input-item-bg: $primary !default;
 $selectize-input-item-border-radius: $badge-border-radius !default;
 $selectize-input-item-color: color-yiq($selectize-input-item-bg) !default;
 $selectize-input-item-font-size: $badge-font-size !default;
+$selectize-input-item-font-weight: $font-weight-normal !default;
 $selectize-input-item-margin: 0 3px 0 0 !default;
 $selectize-input-item-padding-x: $badge-padding-x !default;
 $selectize-input-item-padding-y: $badge-padding-y !default;

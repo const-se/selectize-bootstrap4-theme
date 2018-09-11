@@ -2,6 +2,14 @@
 
 [Selectize](https://selectize.github.io/selectize.js/) Theme (SCSS) based on the [Bootstrap 4](https://getbootstrap.com/) components.
 
+## Table of Contents
+
+- [Status](#status)
+- [Quick Start](#quick-start)
+- [TODO](#todo)
+- [Creators](#creators)
+- [Copyrights and License](#copyrights-and-license)
+
 ## Status
 
 [![GitHub release](https://img.shields.io/github/release/const-se/selectize-bootstrap4-theme.svg)](https://github.com/const-se/selectize-bootstrap4-theme/releases)
@@ -23,6 +31,14 @@ Several quick start options are available:
 - Install with [composer](https://getcomposer.org/): `composer require const-se/selectize-bootstrap4-theme`
 
 Read the [Documentation](docs/en/index.md) for more information.
+
+## TODO
+
+- RTL direction support
+- Attribute `readonly` support
+- Bootstrap class `custom-select` support
+- Bootstrap form validation support
+- Selectize plugin styles support
 
 ## Creators
 

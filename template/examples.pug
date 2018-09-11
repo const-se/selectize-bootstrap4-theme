@@ -2,70 +2,97 @@ doctype html
 html
     head
         meta(charset='UTF-8')
-        title Selectize Examples
+        title Selectize Theme for Bootstrap 4
         link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.css')
         link(rel='stylesheet' href='css/selectize.bootstrap4.css')
-    body
+    body(class='m-5')
         div(class='container')
-            h1 Examples
-            br
-            form
-                h2 Tagging
-                label(for='tags') Tags:
-                select(id='tags' name='tags' class='form-control' multiple)
-                    each option in ['awesome', 'neat', 'may']
-                        option(value=option selected)= option
-                br
-                h2 Email Contacts
-                label(for='email') Email:
-                select(id='email' name='email' class='form-control' multiple)
-                br
-                h2 Single Item Select
-                label(for='beast') Beast:
-                select(id='beast' name='beast' class='form-control')
-                    option(value selected) Choose...
-                    each option, index in ['Chuck Tesla', 'Nicola Tesla', 'Sage Cattabriga-Alosa']
-                        option(value=index)= option
-                br
-                h2 Option Groups
-                label(for='gear') Gear:
-                select(id='gear' name='gear' class='form-control')
-                    optgroup(label='Climbing')
-                        each option, index in ['Bolts', 'Cams', 'Nuts', 'Pitons', 'Sling', 'Stoppers']
-                            option(value='climbing-' + index)= option
-                    optgroup(label='Skiing')
-                        each option, index in ['Poles', 'Skins', 'Skis']
-                            option(value='skiing-' + index)= option
-                br
-                h2 Large Input
-                label(for='state') State:
-                select(id='state' name='state' class='form-control form-control-lg')
-                    each option, index in ['California', 'Florida', 'Michigan']
-                        option(value=index)= option
-            br
-            h2 Inline Form
-            form(class='form-inline')
-                label(for='country' class='m-2') Country:
-                select(id='country' name='country' class='form-control w-50')
-                    option(value selected) Choose...
-                    each option, index in ['Australia', 'Belgium', 'Canada']
-                        option(value=index)= option
-                div(class='form-check m-2')
-                    input(type='checkbox' id='country-remember' name='country-remember' class='form-check-input')
-                    label(for='country-remember' class='form-check-label') Remember
+            h1(class='text-center') Selectize Theme for Bootstrap 4
+            div(class='row my-5')
+                div(class='col-6')
+                    h2 Single Select
+                    form
+                        div(class='form-group')
+                            select(class='form-control selectize-single')
+                                option(value selected) Choose...
+                                each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
+                                    option(value=option)= option
+                div(class='col-6')
+                    h2 Multiple Select
+                    form
+                        div(class='form-group')
+                            select(class='form-control selectize-multiple' multiple)
+                                each option in ['Red', 'Green', 'Blue']
+                                    option(value=option selected)= option
+            div(class='row my-5')
+                div(class='col-6')
+                    h2 Inline Form
+                    form(class='form-inline')
+                        select(class='form-control w-50 selectize-single')
+                            option(value selected) Choose...
+                            each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
+                                option(value=option)= option
+                        input(type='text' class='form-control mx-2' placeholder='Some text input')
+                div(class='col-6')
+                    h2 Disabled Select
+                    form
+                        select(class='form-control selectize-single' disabled)
+                            option(value selected) Choose...
+            div(class='row my-5')
+                div(class='col-6')
+                    h2 Custom Options
+                    form
+                        div(class='form-group')
+                            select(class='form-control selectize-custom' multiple)
+                div(class='col-6')
+                    h2 Option Groups
+                    form
+                        div(class='form-group')
+                            select(class='form-control selectize-single')
+                                option(value selected) Choose...
+                                optgroup(label='Climbing')
+                                    each option, index in ['Bolts', 'Cams', 'Nuts', 'Pitons', 'Sling', 'Stoppers']
+                                        option(value='climbing' + index)= option
+                                optgroup(label='Skiing')
+                                    each option, index in ['Poles', 'Skins', 'Skis']
+                                        option(value='skiing' + index)= option
+            div(class='row my-5')
+                div(class='col-6')
+                    h2 Input Groups
+                    form
+                        div(class='input-group')
+                            div(class='input-group-prepend')
+                                div(class='input-group-text') @
+                            select(class='form-control selectize-single')
+                                option(value selected) Choose...
+                                each option, index in ['john@example.com', 'johndoe@example.com']
+                                    option(value=index)= option
+                div(class='col-6')
+                    h2 Sizing
+                    form
+                        div(class='form-group')
+                            select(class='form-control form-control-lg selectize-single')
+                                option(value selected) Choose...
+                                each option in ['Red', 'Green', 'Blue']
+                                    option(value=index)= option
+                        div(class='form-group')
+                            select(class='form-control form-control-sm selectize-single')
+                                option(value selected) Choose...
+                                each option in ['Red', 'Green', 'Blue']
+                                    option(value=index)= option
         script(src='https://code.jquery.com/jquery-3.3.1.js')
         script(src='js/selectize.js')
         script.
             var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
-
-            $('#tags').selectize({
+            $('.selectize-single').selectize({sortField: 'text'});
+            $('.selectize-multiple').selectize({
                 delimiter: ',',
                 persist: false,
                 create: function (input) {
-                    return {value: input, text: input};
+                   return {value: input, text: input};
                 }
             });
-            $('#email').selectize({
+            $('.selectize-custom').selectize({
                 persist: false,
                 maxItems: null,
                 valueField: 'email',
@@ -86,7 +113,6 @@ html
                     option: function (item, escape) {
                         var label = item.name || item.email;
                         var caption = item.name ? item.email : null;
-
                         return '<div class="option">'
                             + '<span class="label">' + escape(label) + '</span>'
                             + (caption ? '<small class="caption" style="display:block">' + escape(caption) + '</small>' : '')
@@ -95,38 +121,27 @@ html
                 },
                 createFilter: function (input) {
                     var match, regex;
-
                     regex = new RegExp('^' + REGEX_EMAIL + '$', 'i');
                     match = input.match(regex);
-
                     if (match) {
                         return !this.options.hasOwnProperty(match[0]);
                     }
-
                     regex = new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i');
                     match = input.match(regex);
-
                     if (match) {
                         return !this.options.hasOwnProperty(match[2]);
                     }
-
                     return false;
                 },
                 create: function (input) {
                     if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
                         return {email: input};
                     }
-
                     var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
-
                     if (match) {
                         return {email: match[2], name: $.trim(match[1])};
                     }
-
                     alert('Invalid email address.');
-
                     return false;
                 }
             });
-            $('#beast').selectize({create: true, sortField: 'text'});
-            $('#gear, #state, #country').selectize({sortField: 'text'});

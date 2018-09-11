@@ -36,8 +36,10 @@
       background-clip: padding-box;
       background-color: $selectize-input-bg;
       border: $selectize-input-border-width solid $selectize-input-border-color;
+      color: $selectize-input-color;
       cursor: text;
       display: inline-block;
+      font-size: $selectize-input-font-size;
       height: 100%;
       overflow: hidden;
       padding: $selectize-input-padding-y $selectize-input-padding-x;
@@ -45,7 +47,6 @@
       width: 100%;
       @include border-radius($selectize-input-border-radius);
       @include box-shadow($selectize-input-box-shadow);
-      @include form-control-focus();
       @include transition($selectize-input-transition);
 
       * {
@@ -60,7 +61,9 @@
         background: none !important;
         border: none !important;
         box-shadow: none !important;
+        color: inherit;
         display: inline-block !important;
+        font-size: inherit;
         line-height: inherit !important;
         margin: $selectize-input-caret-margin !important;
         max-height: none !important;
@@ -84,6 +87,25 @@
         }
       }
 
+      &.focus {
+        color: $selectize-input-color-focus;
+        background-color: $selectize-input-bg-focus;
+        border-color: $selectize-input-border-color-focus;
+        outline: 0;
+
+        @if $enable-shadows {
+          box-shadow: $selectize-input-box-shadow, $selectize-input-box-shadow-focus;
+        } @else {
+          box-shadow: $selectize-input-box-shadow-focus;
+        }
+      }
+
+      &.disabled {
+        background-color: $selectize-input-bg-disabled;
+        color: $selectize-input-color-disabled;
+        opacity: 1;
+      }
+
       &.dropdown-active {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -98,6 +120,7 @@
       display: none;
       height: auto;
       left: 0;
+      margin: 0 !important;
       padding: 0;
       position: absolute;
       top: 100%;
@@ -190,14 +213,6 @@
       }
     }
 
-    &:disabled,
-    &[readonly] {
-      .selectize-input {
-        background-color: $selectize-input-bg-disabled;
-        opacity: 1;
-      }
-    }
-
     &.single {
       &:after {
         $selectize-input-arrow-width-half: $selectize-input-arrow-width / 2;
@@ -231,41 +246,70 @@
         overflow: auto;
 
         .item {
-          background-color: $selectize-input-item-bg;
-          color: $selectize-input-item-color;
-          display: inline-block;
-          font-size: $selectize-input-item-font-size;
-          line-height: 1;
           margin: $selectize-input-item-margin;
-          padding: $selectize-input-item-padding-y $selectize-input-item-padding-x;
-          text-align: center;
-          vertical-align: middle;
-          white-space: nowrap;
-          @include border-radius($selectize-input-item-border-radius);
         }
       }
+    }
+
+    .selectize-dropdown-content .create strong,
+    &.multi .selectize-input .item {
+      background-color: $selectize-input-item-bg;
+      color: $selectize-input-item-color;
+      display: inline-block;
+      font-size: $selectize-input-item-font-size;
+      font-weight: $selectize-input-item-font-weight;
+      line-height: 1;
+      padding: $selectize-input-item-padding-y $selectize-input-item-padding-x;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      @include border-radius($selectize-input-item-border-radius);
     }
   }
 }
 
 .form-control-lg {
   &.selectize-control {
+    height: $selectize-input-height-lg;
     padding: 0;
 
     .selectize-input {
+      font-size: $selectize-input-font-size-lg;
       padding: $selectize-input-padding-y-lg $selectize-input-padding-x-lg;
       @include border-radius($selectize-input-border-radius-lg);
+    }
+
+    &.single {
+      .selectize-input {
+        padding-right: calc(#{$selectize-input-padding-x-lg} + #{$selectize-input-arrow-width});
+      }
+    }
+
+    &.multi {
+      min-height: $selectize-input-height-lg;
     }
   }
 }
 
 .form-control-sm {
   &.selectize-control {
+    height: $selectize-input-height-sm;
     padding: 0;
 
     .selectize-input {
+      font-size: $selectize-input-font-size-sm;
       padding: $selectize-input-padding-y-sm $selectize-input-padding-x-sm;
       @include border-radius($selectize-input-border-radius-sm);
+    }
+
+    &.single {
+      .selectize-input {
+        padding-right: calc(#{$selectize-input-padding-x-sm} + #{$selectize-input-arrow-width});
+      }
+    }
+
+    &.multi {
+      min-height: $selectize-input-height-sm;
     }
   }
 }
