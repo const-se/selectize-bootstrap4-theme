@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Selectize Examples</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="css/selectize.bootstrap4.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Examples</h1><br>
+      <form>
+        <h2>Tagging</h2>
+        <label for="tags">Tags:</label>
+        <select class="form-control" id="tags" name="tags" multiple>
+          <option value="awesome" selected>awesome</option>
+          <option value="neat" selected>neat</option>
+          <option value="may" selected>may</option>
+        </select><br>
+        <h2>Email Contacts</h2>
+        <label for="email">Email:</label>
+        <select class="form-control" id="email" name="email" multiple></select><br>
+        <h2>Single Item Select</h2>
+        <label for="beast">Beast:</label>
+        <select class="form-control" id="beast" name="beast">
+          <option value selected>Choose...</option>
+          <option value="0">Chuck Tesla</option>
+          <option value="1">Nicola Tesla</option>
+          <option value="2">Sage Cattabriga-Alosa</option>
+        </select><br>
+        <h2>Option Groups</h2>
+        <label for="gear">Gear:</label>
+        <select class="form-control" id="gear" name="gear">
+          <optgroup label="Climbing">
+            <option value="climbing-0">Bolts</option>
+            <option value="climbing-1">Cams</option>
+            <option value="climbing-2">Nuts</option>
+            <option value="climbing-3">Pitons</option>
+            <option value="climbing-4">Sling</option>
+            <option value="climbing-5">Stoppers</option>
+          </optgroup>
+          <optgroup label="Skiing">
+            <option value="skiing-0">Poles</option>
+            <option value="skiing-1">Skins</option>
+            <option value="skiing-2">Skis</option>
+          </optgroup>
+        </select><br>
+        <h2>Large Input</h2>
+        <label for="state">State:</label>
+        <select class="form-control form-control-lg" id="state" name="state">
+          <option value="0">California</option>
+          <option value="1">Florida</option>
+          <option value="2">Michigan</option>
+        </select>
+      </form><br>
+      <h2>Inline Form</h2>
+      <form class="form-inline">
+        <label class="m-2" for="country">Country:</label>
+        <select class="form-control w-50" id="country" name="country">
+          <option value selected>Choose...</option>
+          <option value="0">Australia</option>
+          <option value="1">Belgium</option>
+          <option value="2">Canada</option>
+        </select>
+        <div class="form-check m-2">
+          <input class="form-check-input" type="checkbox" id="country-remember" name="country-remember">
+          <label class="form-check-label" for="country-remember">Remember</label>
+        </div>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="js/selectize.js"></script>
+    <script>
+      var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
+      
+      $('#tags').selectize({
+          delimiter: ',',
+          persist: false,
+          create: function (input) {
+              return {value: input, text: input};
+          }
+      });
+      $('#email').selectize({
+          persist: false,
+          maxItems: null,
+          valueField: 'email',
+          labelField: 'name',
+          searchField: ['name', 'email'],
+          options: [
+              {email: 'brian@thirdroute.com', name: 'Brian Reavis'},
+              {email: 'nikola@tesla.com', name: 'Nikola Tesla'},
+              {email: 'someone@gmail.com'}
+          ],
+          render: {
+              item: function (item, escape) {
+                  return '<div class="item">'
+                      + (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '')
+                      + (item.email ? ' <span class="email">&lt;' + escape(item.email) + '&gt;</span>' : '')
+                      + '</div>';
+              },
+              option: function (item, escape) {
+                  var label = item.name || item.email;
+                  var caption = item.name ? item.email : null;
+      
+                  return '<div class="option">'
+                      + '<span class="label">' + escape(label) + '</span>'
+                      + (caption ? '<small class="caption" style="display:block">' + escape(caption) + '</small>' : '')
+                      + '</div>';
+              }
+          },
+          createFilter: function (input) {
+              var match, regex;
+      
+              regex = new RegExp('^' + REGEX_EMAIL + '$', 'i');
+              match = input.match(regex);
+      
+              if (match) {
+                  return !this.options.hasOwnProperty(match[0]);
+              }
+      
+              regex = new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i');
+              match = input.match(regex);
+      
+              if (match) {
+                  return !this.options.hasOwnProperty(match[2]);
+              }
+      
+              return false;
+          },
+          create: function (input) {
+              if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
+                  return {email: input};
+              }
+      
+              var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
+      
+              if (match) {
+                  return {email: match[2], name: $.trim(match[1])};
+              }
+      
+              alert('Invalid email address.');
+      
+              return false;
+          }
+      });
+      $('#beast').selectize({create: true, sortField: 'text'});
+      $('#gear, #state, #country').selectize({sortField: 'text'});
+    </script>
+  </body>
+</html>
