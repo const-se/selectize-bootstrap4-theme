@@ -1,8 +1,8 @@
 {
   "name": "selectize-bootstrap4-theme",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "license": "Apache-2.0",
-  "main": "gulpfile.js",
+  "main": "index.js",
   "description": "Selectize Theme for Bootstrap 4",
   "keywords": [
     "bootstrap",
@@ -30,6 +30,10 @@
     "lodash": "^4.17.10",
     "selectize": "^0.12.6"
   },
+  "files": [
+    "dist/css/*.css",
+    "scss/*.scss"
+  ],
   "engines": {
     "node": ">=6"
   },

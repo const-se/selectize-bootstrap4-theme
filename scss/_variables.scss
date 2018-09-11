@@ -1,16 +1,97 @@
-$selectize-arrow-width: .625rem !default;
+// Input
 
-$selectize-caret-color: $body-color !default;
-$selectize-caret-margin: 0 2px 0 0 !default;
+$selectize-input-bg: $input-bg !default;
+$selectize-input-bg-disabled: $input-disabled-bg !default;
+$selectize-input-bg-focus: $input-focus-bg !default;
+$selectize-input-border-color: $input-border-color !default;
+$selectize-input-border-color-focus: $input-focus-border-color !default;
+$selectize-input-border-radius: $input-border-radius !default;
+$selectize-input-border-width: $input-border-width !default;
+$selectize-input-box-shadow: $input-box-shadow !default;
+$selectize-input-box-shadow-focus: $input-focus-box-shadow !default;
+$selectize-input-color: $input-color !default;
+$selectize-input-color-disabled: $selectize-input-color !default;
+$selectize-input-color-focus: $input-focus-color !default;
+$selectize-input-font-size: $font-size-base !default;
+$selectize-input-height: $input-height !default;
+$selectize-input-padding-x: $input-padding-x !default;
+$selectize-input-padding-y: $input-padding-y !default;
+$selectize-input-placeholder-color: $input-placeholder-color !default;
+$selectize-input-transition: $input-transition !default;
 
-$selectize-dropdown-max-height: 14.5rem !default;
+// Large Input
 
-$selectize-dropdown-divider-bg-color: $dropdown-divider-bg !default;
+$selectize-input-border-radius-lg: $input-border-radius-lg !default;
+$selectize-input-font-size-lg: $font-size-lg !default;
+$selectize-input-height-lg: $input-height-lg !default;
+$selectize-input-padding-y-lg: $input-padding-y-lg !default;
+$selectize-input-padding-x-lg: $input-padding-x-lg !default;
 
-$selectize-dropdown-item-bg-color: $dropdown-link-active-bg !default;
-$selectize-dropdown-item-color: $dropdown-link-active-color !default;
-$selectize-dropdown-item-color-disabled: $dropdown-link-disabled-color !default;
-$selectize-dropdown-item-header-color: $dropdown-header-color !default;
+// Small Input
 
-$selectize-item-bg-color: $primary !default;
-$selectize-item-margin: 0 3px 0 0 !default;
+$selectize-input-border-radius-sm: $input-border-radius-sm !default;
+$selectize-input-font-size-sm: $font-size-sm !default;
+$selectize-input-height-sm: $input-height-sm !default;
+$selectize-input-padding-y-sm: $input-padding-y-sm !default;
+$selectize-input-padding-x-sm: $input-padding-x-sm !default;
+
+// Input Caret
+
+$selectize-input-caret-margin: 0 2px 0 0 !default;
+
+// Input Arrow
+
+$selectize-input-arrow-color: $body-color !default;
+$selectize-input-arrow-width: .625rem !default;
+
+// Input Item
+
+$selectize-input-item-bg: $primary !default;
+$selectize-input-item-border-radius: $badge-border-radius !default;
+$selectize-input-item-color: color-yiq($selectize-input-item-bg) !default;
+$selectize-input-item-font-size: $badge-font-size !default;
+$selectize-input-item-font-weight: $font-weight-normal !default;
+$selectize-input-item-margin: 0 3px 0 0 !default;
+$selectize-input-item-padding-x: $badge-padding-x !default;
+$selectize-input-item-padding-y: $badge-padding-y !default;
+
+// Dropdown
+
+$selectize-dropdown-bg: $dropdown-bg !default;
+$selectize-dropdown-border-color: $selectize-input-border-color !default;
+$selectize-dropdown-border-radius: $dropdown-border-radius !default;
+$selectize-dropdown-border-width: $selectize-input-border-width !default;
+$selectize-dropdown-box-shadow: $dropdown-box-shadow !default;
+$selectize-dropdown-color: $body-color !default;
+$selectize-dropdown-font-size: $font-size-base !default;
+$selectize-dropdown-height-max: 14.5rem !default;
+$selectize-dropdown-padding: $dropdown-padding-y 0 !default;
+$selectize-dropdown-zindex: $zindex-dropdown !default;
+
+// Dropdown Option
+
+$selectize-dropdown-option-bg: transparent !default;
+$selectize-dropdown-option-bg-active: $dropdown-link-active-bg !default;
+$selectize-dropdown-option-bg-disabled: transparent !default;
+$selectize-dropdown-option-color: $dropdown-link-color !default;
+$selectize-dropdown-option-color-active: $dropdown-link-active-color !default;
+$selectize-dropdown-option-color-disabled: $dropdown-link-disabled-color !default;
+$selectize-dropdown-option-font-weight: $font-weight-normal !default;
+$selectize-dropdown-option-padding-x: $dropdown-item-padding-x !default;
+$selectize-dropdown-option-padding-y: $dropdown-item-padding-y !default;
+
+// Dropdown Group
+
+$selectize-dropdown-group-margin-bottom: $nav-divider-margin-y !default;
+
+// Dropdown Group Header
+
+$selectize-dropdown-group-header-color: $dropdown-header-color !default;
+$selectize-dropdown-group-header-font-size: $font-size-sm !default;
+$selectize-dropdown-group-header-padding-x: $selectize-dropdown-option-padding-x !default;
+$selectize-dropdown-group-header-padding-y: $selectize-dropdown-option-padding-y !default;
+
+// Dropdown Group Divider
+
+$selectize-dropdown-group-divider-bg: $dropdown-divider-bg !default;
+$selectize-dropdown-group-divider-width: 1px !default;

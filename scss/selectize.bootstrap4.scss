@@ -1,8 +1,19 @@
 /*!
- * Selectize Theme for Bootstrap 4
- * Version 1.2.1
+ * Selectize Theme for Bootstrap 4 v2.0.0
+ *
  * Copyright 2018 Constantine Seleznyoff <const.seoff@gmail.com>
- * Licensed under the Apache License, Version 2.0 (https://github.com/const-se/selectize-bootstrap4-theme/blob/master/LICENSE)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 @import "node_modules/bootstrap/scss/functions";
@@ -16,25 +27,27 @@
     border: none;
     border-radius: 0;
     box-shadow: none;
+    height: $selectize-input-height;
     padding: 0;
     position: relative;
     transition: none;
 
     .selectize-input {
       background-clip: padding-box;
-      background-color: $input-bg;
-      border: $input-border-width solid $input-border-color;
+      background-color: $selectize-input-bg;
+      border: $selectize-input-border-width solid $selectize-input-border-color;
+      color: $selectize-input-color;
       cursor: text;
       display: inline-block;
+      font-size: $selectize-input-font-size;
       height: 100%;
       overflow: hidden;
-      padding: $input-padding-y $input-padding-x;
+      padding: $selectize-input-padding-y $selectize-input-padding-x;
       position: relative;
       width: 100%;
-      @include border-radius($input-border-radius);
-      @include box-shadow($input-box-shadow);
-      @include form-control-focus();
-      @include transition($input-transition);
+      @include border-radius($selectize-input-border-radius);
+      @include box-shadow($selectize-input-box-shadow);
+      @include transition($selectize-input-transition);
 
       * {
         display: -moz-inline-stack;
@@ -48,9 +61,11 @@
         background: none !important;
         border: none !important;
         box-shadow: none !important;
+        color: inherit;
         display: inline-block !important;
+        font-size: inherit;
         line-height: inherit !important;
-        margin: $selectize-caret-margin !important;
+        margin: $selectize-input-caret-margin !important;
         max-height: none !important;
         max-width: 100% !important;
         min-height: 0 !important;
@@ -67,9 +82,28 @@
         }
 
         &::placeholder {
-          color: $input-placeholder-color;
+          color: $selectize-input-placeholder-color;
           opacity: 1;
         }
+      }
+
+      &.focus {
+        color: $selectize-input-color-focus;
+        background-color: $selectize-input-bg-focus;
+        border-color: $selectize-input-border-color-focus;
+        outline: 0;
+
+        @if $enable-shadows {
+          box-shadow: $selectize-input-box-shadow, $selectize-input-box-shadow-focus;
+        } @else {
+          box-shadow: $selectize-input-box-shadow-focus;
+        }
+      }
+
+      &.disabled {
+        background-color: $selectize-input-bg-disabled;
+        color: $selectize-input-color-disabled;
+        opacity: 1;
       }
 
       &.dropdown-active {
@@ -86,36 +120,37 @@
       display: none;
       height: auto;
       left: 0;
+      margin: 0 !important;
       padding: 0;
       position: absolute;
       top: 100%;
       transition: none;
       width: 100% !important;
-      z-index: $zindex-dropdown;
+      z-index: $selectize-dropdown-zindex;
 
       .selectize-dropdown-content {
-        background-color: $dropdown-bg;
+        background-color: $selectize-dropdown-bg;
         background-clip: padding-box;
-        border: $input-border-width solid $input-border-color;
-        border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius;
+        border: $selectize-dropdown-border-width solid $selectize-dropdown-border-color;
+        border-radius: 0 0 $selectize-dropdown-border-radius $selectize-dropdown-border-radius;
         border-top-width: 0;
-        color: $body-color;
-        font-size: $font-size-base;
-        max-height: $selectize-dropdown-max-height;
+        color: $selectize-dropdown-color;
+        font-size: $selectize-dropdown-font-size;
+        max-height: $selectize-dropdown-height-max;
         overflow-x: hidden;
         overflow-y: auto;
-        padding: $dropdown-padding-y 0;
+        padding: $selectize-dropdown-padding;
         position: relative;
         text-align: left;
         -webkit-overflow-scrolling: touch;
-        @include box-shadow($dropdown-box-shadow);
+        @include box-shadow($selectize-dropdown-box-shadow);
 
         .option,
         .create {
-          background-color: transparent;
-          color: $dropdown-link-color;
-          font-weight: $font-weight-normal;
-          padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+          background-color: $selectize-dropdown-option-bg;
+          color: $selectize-dropdown-option-color;
+          font-weight: $selectize-dropdown-option-font-weight;
+          padding: $selectize-dropdown-option-padding-y $selectize-dropdown-option-padding-x;
           text-align: inherit;
           white-space: nowrap;
         }
@@ -126,23 +161,23 @@
 
         .option {
           @include hover-focus {
-            color: $selectize-dropdown-item-color;
+            color: $selectize-dropdown-option-color-active;
             text-decoration: none;
-            @include gradient-bg($selectize-item-bg-color);
+            @include gradient-bg($selectize-dropdown-option-bg-active);
           }
 
           &.active,
           &:active {
-            color: $selectize-dropdown-item-color;
+            color: $selectize-dropdown-option-color-active;
             text-decoration: none;
-            @include gradient-bg($selectize-item-bg-color);
+            @include gradient-bg($selectize-dropdown-option-bg-active);
           }
 
           &.disabled,
           &:disabled,
           &[data-disabled] {
-            background-color: transparent;
-            color: $selectize-dropdown-item-color-disabled;
+            background-color: $selectize-dropdown-option-bg-disabled;
+            color: $selectize-dropdown-option-color-disabled;
 
             @if $enable-gradients {
               background-image: none;
@@ -156,9 +191,9 @@
         }
 
         .optgroup {
-          border-bottom: 1px solid $selectize-dropdown-divider-bg-color;
-          margin-bottom: $nav-divider-margin-y;
-          padding-bottom: $nav-divider-margin-y;
+          border-bottom: $selectize-dropdown-group-divider-width solid $selectize-dropdown-group-divider-bg;
+          margin-bottom: $selectize-dropdown-group-margin-bottom;
+          padding-bottom: $selectize-dropdown-group-margin-bottom;
 
           &:last-child {
             border-bottom-width: 0;
@@ -167,51 +202,43 @@
           }
 
           .optgroup-header {
-            color: $selectize-dropdown-item-header-color;
+            color: $selectize-dropdown-group-header-color;
             display: block;
-            font-size: $font-size-sm;
+            font-size: $selectize-dropdown-group-header-font-size;
             margin-bottom: 0;
-            padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+            padding: $selectize-dropdown-group-header-padding-y $selectize-dropdown-group-header-padding-x;
             white-space: nowrap;
           }
         }
       }
     }
 
-    &:disabled,
-    &[readonly] {
-      .selectize-input {
-        background-color: $input-disabled-bg;
-        opacity: 1;
-      }
-    }
-
     &.single {
       &:after {
-        $selectize-arrow-width-half: $selectize-arrow-width / 2;
-        $selectize-arrow-height: 1.732050808 * $selectize-arrow-width-half;
+        $selectize-input-arrow-width-half: $selectize-input-arrow-width / 2;
+        $selectize-arrow-height: 1.732050808 * $selectize-input-arrow-width-half;
 
-        border-color: $selectize-caret-color transparent transparent transparent;
+        border-color: $selectize-input-arrow-color transparent transparent transparent;
         border-style: solid;
-        border-width: $selectize-arrow-height $selectize-arrow-width-half 0 $selectize-arrow-width-half;
+        border-width: $selectize-arrow-height $selectize-input-arrow-width-half 0 $selectize-input-arrow-width-half;
         content: '';
         display: block;
         height: 0;
         margin-top: -1 * $selectize-arrow-height / 2;
         position: absolute;
         top: 50%;
-        right: $input-padding-x;
+        right: $selectize-input-padding-x;
         width: 0;
       }
 
       .selectize-input {
-        padding-right: calc(#{$input-padding-x} + #{$selectize-arrow-width});
+        padding-right: calc(#{$selectize-input-padding-x} + #{$selectize-input-arrow-width});
       }
     }
 
     &.multi {
       height: auto;
-      min-height: $input-height;
+      min-height: $selectize-input-height;
 
       .selectize-input {
         height: auto;
@@ -219,42 +246,70 @@
         overflow: auto;
 
         .item {
-          background-color: $selectize-item-bg-color;
-          color: color-yiq($selectize-item-bg-color);
-          display: inline-block;
-          font-size: $badge-font-size;
-          height: 100%;
-          line-height: 1;
-          margin: $selectize-item-margin;
-          padding: $badge-padding-y $badge-padding-x;
-          text-align: center;
-          vertical-align: middle;
-          white-space: nowrap;
-          @include border-radius($badge-border-radius);
+          margin: $selectize-input-item-margin;
         }
       }
+    }
+
+    .selectize-dropdown-content .create strong,
+    &.multi .selectize-input .item {
+      background-color: $selectize-input-item-bg;
+      color: $selectize-input-item-color;
+      display: inline-block;
+      font-size: $selectize-input-item-font-size;
+      font-weight: $selectize-input-item-font-weight;
+      line-height: 1;
+      padding: $selectize-input-item-padding-y $selectize-input-item-padding-x;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      @include border-radius($selectize-input-item-border-radius);
     }
   }
 }
 
 .form-control-lg {
   &.selectize-control {
+    height: $selectize-input-height-lg;
     padding: 0;
 
     .selectize-input {
-      padding: $input-padding-y-lg $input-padding-x-lg;
-      @include border-radius($input-border-radius-lg);
+      font-size: $selectize-input-font-size-lg;
+      padding: $selectize-input-padding-y-lg $selectize-input-padding-x-lg;
+      @include border-radius($selectize-input-border-radius-lg);
+    }
+
+    &.single {
+      .selectize-input {
+        padding-right: calc(#{$selectize-input-padding-x-lg} + #{$selectize-input-arrow-width});
+      }
+    }
+
+    &.multi {
+      min-height: $selectize-input-height-lg;
     }
   }
 }
 
 .form-control-sm {
   &.selectize-control {
+    height: $selectize-input-height-sm;
     padding: 0;
 
     .selectize-input {
-      padding: $input-padding-y-sm $input-padding-x-sm;
-      @include border-radius($input-border-radius-sm);
+      font-size: $selectize-input-font-size-sm;
+      padding: $selectize-input-padding-y-sm $selectize-input-padding-x-sm;
+      @include border-radius($selectize-input-border-radius-sm);
+    }
+
+    &.single {
+      .selectize-input {
+        padding-right: calc(#{$selectize-input-padding-x-sm} + #{$selectize-input-arrow-width});
+      }
+    }
+
+    &.multi {
+      min-height: $selectize-input-height-sm;
     }
   }
 }
