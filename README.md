@@ -34,7 +34,6 @@ Read the [Documentation](docs/en/index.md) for more information.
 
 ## TODO
 
-- Bootstrap Input Groups support
 - Attribute `readonly` support
 - Bootstrap class `custom-select` support
 - Bootstrap form validation support

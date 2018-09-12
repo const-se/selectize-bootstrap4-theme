@@ -102,8 +102,8 @@
 }
 
 .form-control.selectize-control .selectize-input.dropdown-active {
-  border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .form-control.selectize-control .selectize-dropdown {
@@ -212,7 +212,7 @@
 }
 
 .form-control.selectize-control.single .selectize-input {
-  padding-right: calc(0.75rem + 0.625rem);
+  padding-right: calc(0.75rem + 0.625rem + 0.375rem);
 }
 
 .form-control.selectize-control.multi {
@@ -267,7 +267,7 @@
 }
 
 .form-control.selectize-control.rtl.single .selectize-input {
-  padding-left: calc(0.75rem + 0.625rem);
+  padding-left: calc(0.75rem + 0.625rem + 0.375rem);
   padding-right: 0.75rem;
 }
 
@@ -287,11 +287,11 @@
 }
 
 .form-control-lg.selectize-control.single .selectize-input {
-  padding-right: calc(1rem + 0.625rem);
+  padding-right: calc(1rem + 0.625rem + 0.5rem);
 }
 
 .form-control-lg.selectize-control.single.rtl .selectize-input {
-  padding-left: calc(1rem + 0.625rem);
+  padding-left: calc(1rem + 0.625rem + 0.5rem);
   padding-right: 1rem;
 }
 
@@ -311,14 +311,28 @@
 }
 
 .form-control-sm.selectize-control.single .selectize-input {
-  padding-right: calc(0.5rem + 0.625rem);
+  padding-right: calc(0.5rem + 0.625rem + 0.25rem);
 }
 
 .form-control-sm.selectize-control.single.rtl .selectize-input {
-  padding-left: calc(0.5rem + 0.625rem);
+  padding-left: calc(0.5rem + 0.625rem + 0.25rem);
   padding-right: 0.5rem;
 }
 
 .form-control-sm.selectize-control.multi {
   min-height: calc(1.8125rem + 2px);
+}
+
+.input-group > .form-control.selectize-control.multi {
+  height: calc(2.25rem + 2px);
+}
+
+.input-group > .form-control:not(:first-child).selectize-control .selectize-input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group > .form-control:not(:last-child).selectize-control .selectize-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }

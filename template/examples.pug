@@ -46,12 +46,23 @@ html
                                 optgroup(label='Skiing')
                                     each option, index in ['Poles', 'Skins', 'Skis']
                                         option(value='skiing' + index)= option
-                    form(class='form-inline')
+                    form(class='form-inline my-2')
                         label(for='select-6' class='mr-2') Inline
                         select(id='select-6' class='form-control w-50 selectize-single')
                             option(value selected) Choose...
                             each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
                                 option(value=option)= option
+                    form(class='form-inline my-2')
+                        label(for='select-13' class='mr-2') Input Group
+                        div(class='input-group')
+                            div(class='input-group-prepend')
+                                div(class='input-group-text') Color
+                            select(id='select-13' class='form-control selectize-single')
+                                option(value selected) Choose...
+                                each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
+                                    option(value=option)= option
+                            div(class='input-group-append')
+                                div(class='input-group-text') !
                 div(class='col-6')
                     h2 Multiple Select
                     form
@@ -78,11 +89,21 @@ html
                         div(class='form-group')
                             label(for='select-11') Custom Options
                             select(id='select-11' class='form-control selectize-custom' multiple)
-                    form(class='form-inline')
+                    form(class='form-inline my-2')
                         label(for='select-12' class='mr-2') Inline
                         select(id='select-12' class='form-control w-50 selectize-multiple' multiple)
                             each option in ['Red', 'Green', 'Blue']
                                 option(value=option selected)= option
+                    form(class='form-inline my-2')
+                        label(for='select-14' class='mr-2') Input Group
+                        div(class='input-group')
+                            div(class='input-group-prepend')
+                                div(class='input-group-text') Color
+                            select(id='select-14' class='form-control selectize-multiple' multiple)
+                                each option in ['Red', 'Green', 'Blue']
+                                    option(value=option selected)= option
+                            div(class='input-group-append')
+                                div(class='input-group-text') !
         script(src='https://code.jquery.com/jquery-3.3.1.js')
         script(src='js/selectize.js')
         script.
