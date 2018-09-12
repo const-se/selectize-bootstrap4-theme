@@ -16,7 +16,7 @@
 [![npm version](https://img.shields.io/npm/v/selectize-bootstrap4-theme.svg)](https://www.npmjs.com/package/selectize-bootstrap4-theme)
 [![Packagist](https://img.shields.io/packagist/v/const-se/selectize-bootstrap4-theme.svg)](https://packagist.org/packages/const-se/selectize-bootstrap4-theme)
 [![Github file size](https://img.shields.io/github/size/const-se/selectize-bootstrap4-theme/dist/css/selectize.bootstrap4.css.svg)](https://github.com/const-se/selectize-bootstrap4-theme/blob/master/dist/css/selectize.bootstrap4.css)
-[![Github Releases](https://img.shields.io/github/downloads/const-se/selectize-bootstrap4-theme/latest/total.svg)](https://github.com/const-se/selectize-bootstrap4-theme)
+[![Github All Releases](https://img.shields.io/github/downloads/const-se/selectize-bootstrap4-theme/total.svg)](https://github.com/const-se/selectize-bootstrap4-theme)
 [![npm](https://img.shields.io/npm/dt/selectize-bootstrap4-theme.svg)](https://www.npmjs.com/package/selectize-bootstrap4-theme)
 [![Packagist](https://img.shields.io/packagist/dt/const-se/selectize-bootstrap4-theme.svg)](https://packagist.org/packages/const-se/selectize-bootstrap4-theme)
 
@@ -24,7 +24,7 @@
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/const-se/selectize-bootstrap4-theme/archive/v2.0.0.zip)
+- [Download the latest release](https://github.com/const-se/selectize-bootstrap4-theme/archive/v2.0.1.zip)
 - Clone the repo: `git clone git@github.com:const-se/selectize-bootstrap4-theme.git`
 - Install with [npm](https://www.npmjs.com/): `npm install selectize-bootstrap4-theme`
 - Install with [yarn](https://yarnpkg.com/): `yarn add selectize-bootstrap4-theme`
