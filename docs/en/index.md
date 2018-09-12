@@ -7,6 +7,7 @@ Selectize Theme (SCSS) based on the Bootstrap 4 components.
 - [Dependencies](#dependencies)
 - [Install](#install)
 - [Importing](#importing)
+- [Usage](#usage)
 - [Theming](#theming)
 - [Examples](#examples)
 

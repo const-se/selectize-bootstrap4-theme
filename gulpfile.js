@@ -17,12 +17,12 @@ gulp.task('examples-selectize', () => {
 
 gulp.task('examples-html', () => {
     return gulp
-        .src('template/examples.pug')
+        .src('template/*.pug')
         .pipe(pug({pretty: true}))
         .pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', ['sass', 'examples-selectize', 'examples-html'], () => {
-    gulp.watch(['scss/selectize.bootstrap4.scss'], ['sass']);
-    gulp.watch(['template/examples.pug'], ['examples-selectize', 'examples-html']);
+    gulp.watch(['scss/*.scss'], ['sass']);
+    gulp.watch(['template/*.pug'], ['examples-html']);
 });

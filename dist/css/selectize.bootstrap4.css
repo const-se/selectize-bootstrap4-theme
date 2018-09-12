@@ -245,6 +245,36 @@
   border-radius: 0.25rem;
 }
 
+.form-control.selectize-control.rtl {
+  direction: rtl;
+}
+
+.form-control.selectize-control.rtl .selectize-input {
+  text-align: right;
+}
+
+.form-control.selectize-control.rtl .selectize-input input {
+  margin: 0 0 0 2px !important;
+}
+
+.form-control.selectize-control.rtl .selectize-dropdown .selectize-dropdown-content {
+  text-align: right !important;
+}
+
+.form-control.selectize-control.rtl.single:after {
+  left: 0.75rem;
+  right: auto;
+}
+
+.form-control.selectize-control.rtl.single .selectize-input {
+  padding-left: calc(0.75rem + 0.625rem);
+  padding-right: 0.75rem;
+}
+
+.form-control.selectize-control.rtl.multi .selectize-input .item {
+  margin: 0 0 0 3px;
+}
+
 .form-control-lg.selectize-control {
   height: calc(2.875rem + 2px);
   padding: 0;
@@ -258,6 +288,11 @@
 
 .form-control-lg.selectize-control.single .selectize-input {
   padding-right: calc(1rem + 0.625rem);
+}
+
+.form-control-lg.selectize-control.single.rtl .selectize-input {
+  padding-left: calc(1rem + 0.625rem);
+  padding-right: 1rem;
 }
 
 .form-control-lg.selectize-control.multi {
@@ -277,6 +312,11 @@
 
 .form-control-sm.selectize-control.single .selectize-input {
   padding-right: calc(0.5rem + 0.625rem);
+}
+
+.form-control-sm.selectize-control.single.rtl .selectize-input {
+  padding-left: calc(0.5rem + 0.625rem);
+  padding-right: 0.5rem;
 }
 
 .form-control-sm.selectize-control.multi {
