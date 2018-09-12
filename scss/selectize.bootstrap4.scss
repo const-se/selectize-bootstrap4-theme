@@ -1,5 +1,5 @@
 /*!
- * Selectize Theme for Bootstrap 4 v2.0.0
+ * Selectize Theme for Bootstrap 4 v2.0.1
  *
  * Copyright 2018 Constantine Seleznyoff <const.seoff@gmail.com>
  *
@@ -107,8 +107,7 @@
       }
 
       &.dropdown-active {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        @include border-bottom-radius(0);
       }
     }
 
@@ -232,7 +231,7 @@
       }
 
       .selectize-input {
-        padding-right: calc(#{$selectize-input-padding-x} + #{$selectize-input-arrow-width});
+        padding-right: calc(#{$selectize-input-padding-x} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y});
       }
     }
 
@@ -265,6 +264,44 @@
       white-space: nowrap;
       @include border-radius($selectize-input-item-border-radius);
     }
+
+    &.rtl {
+      direction: rtl;
+
+      .selectize-input {
+        text-align: right;
+
+        input {
+          margin: $selectize-input-caret-margin-rtl !important;
+        }
+      }
+
+      .selectize-dropdown {
+        .selectize-dropdown-content {
+          text-align: right !important;
+        }
+      }
+
+      &.single {
+        &:after {
+          left: $selectize-input-padding-x;
+          right: auto;
+        }
+
+        .selectize-input {
+          padding-left: calc(#{$selectize-input-padding-x} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y});
+          padding-right: $selectize-input-padding-x;
+        }
+      }
+
+      &.multi {
+        .selectize-input {
+          .item {
+            margin: $selectize-input-item-margin-rtl;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -281,7 +318,14 @@
 
     &.single {
       .selectize-input {
-        padding-right: calc(#{$selectize-input-padding-x-lg} + #{$selectize-input-arrow-width});
+        padding-right: calc(#{$selectize-input-padding-x-lg} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y-lg});
+      }
+
+      &.rtl {
+        .selectize-input {
+          padding-left: calc(#{$selectize-input-padding-x-lg} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y-lg});
+          padding-right: $selectize-input-padding-x-lg;
+        }
       }
     }
 
@@ -304,12 +348,45 @@
 
     &.single {
       .selectize-input {
-        padding-right: calc(#{$selectize-input-padding-x-sm} + #{$selectize-input-arrow-width});
+        padding-right: calc(#{$selectize-input-padding-x-sm} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y-sm});
+      }
+
+      &.rtl {
+        .selectize-input {
+          padding-left: calc(#{$selectize-input-padding-x-sm} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y-sm});
+          padding-right: $selectize-input-padding-x-sm;
+        }
       }
     }
 
     &.multi {
       min-height: $selectize-input-height-sm;
+    }
+  }
+}
+
+.input-group {
+  > .form-control {
+    &.selectize-control {
+      &.multi {
+        height: $selectize-input-height;
+      }
+    }
+
+    &:not(:first-child) {
+      &.selectize-control {
+        .selectize-input {
+          @include border-left-radius(0);
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      &.selectize-control {
+        .selectize-input {
+          @include border-right-radius(0);
+        }
+      }
     }
   }
 }

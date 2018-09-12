@@ -14,7 +14,8 @@
           <h2>Single Select</h2>
           <form>
             <div class="form-group">
-              <select class="form-control selectize-single">
+              <label for="select-1">Regular</label>
+              <select class="form-control selectize-single" id="select-1">
                 <option value selected>Choose...</option>
                 <option value="Red">Red</option>
                 <option value="Yellow">Yellow</option>
@@ -28,64 +29,57 @@
                 <option value="Gray">Gray</option>
               </select>
             </div>
-          </form>
-        </div>
-        <div class="col-6">
-          <h2>Multiple Select</h2>
-          <form>
             <div class="form-group">
-              <select class="form-control selectize-multiple" multiple>
-                <option value="Red" selected>Red</option>
-                <option value="Green" selected>Green</option>
-                <option value="Blue" selected>Blue</option>
+              <label for="select-2">Large</label>
+              <select class="form-control form-control-lg selectize-single" id="select-2">
+                <option value selected>Choose...</option>
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Magenta">Magenta</option>
+                <option value="Pink">Pink</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Gray">Gray</option>
               </select>
             </div>
-          </form>
-        </div>
-      </div>
-      <div class="row my-5">
-        <div class="col-6">
-          <h2>Inline Form</h2>
-          <form class="form-inline">
-            <select class="form-control w-50 selectize-single">
-              <option value selected>Choose...</option>
-              <option value="Red">Red</option>
-              <option value="Yellow">Yellow</option>
-              <option value="Green">Green</option>
-              <option value="Blue">Blue</option>
-              <option value="Purple">Purple</option>
-              <option value="Magenta">Magenta</option>
-              <option value="Pink">Pink</option>
-              <option value="Black">Black</option>
-              <option value="White">White</option>
-              <option value="Gray">Gray</option>
-            </select>
-            <input class="form-control mx-2" type="text" placeholder="Some text input">
-          </form>
-        </div>
-        <div class="col-6">
-          <h2>Disabled Select</h2>
-          <form>
-            <select class="form-control selectize-single" disabled>
-              <option value selected>Choose...</option>
-            </select>
-          </form>
-        </div>
-      </div>
-      <div class="row my-5">
-        <div class="col-6">
-          <h2>Custom Options</h2>
-          <form>
             <div class="form-group">
-              <select class="form-control selectize-custom" multiple></select>
+              <label for="select-3">Small</label>
+              <select class="form-control form-control-sm selectize-single" id="select-3">
+                <option value selected>Choose...</option>
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Magenta">Magenta</option>
+                <option value="Pink">Pink</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Gray">Gray</option>
+              </select>
             </div>
-          </form>
-        </div>
-        <div class="col-6">
-          <h2>Option Groups</h2>
-          <form>
             <div class="form-group">
-              <select class="form-control selectize-single">
+              <label for="select-4">RTL</label>
+              <select class="form-control selectize-single" id="select-4" dir="rtl">
+                <option value selected>Choose...</option>
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Magenta">Magenta</option>
+                <option value="Pink">Pink</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Gray">Gray</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="select-5">Option Groups</label>
+              <select class="form-control selectize-single" id="select-5">
                 <option value selected>Choose...</option>
                 <optgroup label="Climbing">
                   <option value="climbing0">Bolts</option>
@@ -103,42 +97,109 @@
               </select>
             </div>
           </form>
-        </div>
-      </div>
-      <div class="row my-5">
-        <div class="col-6">
-          <h2>Input Groups</h2>
-          <form>
+          <form class="form-inline my-2">
+            <label class="mr-2" for="select-6">Inline</label>
+            <select class="form-control w-50 selectize-single" id="select-6">
+              <option value selected>Choose...</option>
+              <option value="Red">Red</option>
+              <option value="Yellow">Yellow</option>
+              <option value="Green">Green</option>
+              <option value="Blue">Blue</option>
+              <option value="Purple">Purple</option>
+              <option value="Magenta">Magenta</option>
+              <option value="Pink">Pink</option>
+              <option value="Black">Black</option>
+              <option value="White">White</option>
+              <option value="Gray">Gray</option>
+            </select>
+          </form>
+          <form class="form-inline my-2">
+            <label class="mr-2" for="select-13">Input Group</label>
             <div class="input-group">
               <div class="input-group-prepend">
-                <div class="input-group-text">@</div>
+                <div class="input-group-text">Color</div>
               </div>
-              <select class="form-control selectize-single">
+              <select class="form-control selectize-single" id="select-13">
                 <option value selected>Choose...</option>
-                <option value="0">john@example.com</option>
-                <option value="1">johndoe@example.com</option>
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Magenta">Magenta</option>
+                <option value="Pink">Pink</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Gray">Gray</option>
               </select>
+              <div class="input-group-append">
+                <div class="input-group-text">!</div>
+              </div>
             </div>
           </form>
         </div>
         <div class="col-6">
-          <h2>Sizing</h2>
+          <h2>Multiple Select</h2>
           <form>
             <div class="form-group">
-              <select class="form-control form-control-lg selectize-single">
-                <option value selected>Choose...</option>
-                <option>Red</option>
-                <option>Green</option>
-                <option>Blue</option>
+              <label for="select-7">Regular</label>
+              <select class="form-control selectize-multiple" id="select-7" multiple>
+                <option value="Red" selected>Red</option>
+                <option value="Green" selected>Green</option>
+                <option value="Blue" selected>Blue</option>
               </select>
             </div>
             <div class="form-group">
-              <select class="form-control form-control-sm selectize-single">
-                <option value selected>Choose...</option>
-                <option>Red</option>
-                <option>Green</option>
-                <option>Blue</option>
+              <label for="select-8">Large</label>
+              <select class="form-control form-control-lg selectize-multiple" id="select-8" multiple>
+                <option value="Red" selected>Red</option>
+                <option value="Green" selected>Green</option>
+                <option value="Blue" selected>Blue</option>
               </select>
+            </div>
+            <div class="form-group">
+              <label for="select-9">Small</label>
+              <select class="form-control form-control-sm selectize-multiple" id="select-9" multiple>
+                <option value="Red" selected>Red</option>
+                <option value="Green" selected>Green</option>
+                <option value="Blue" selected>Blue</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="select-10">RTL</label>
+              <select class="form-control selectize-multiple" id="select-10" multiple dir="rtl">
+                <option value="Red" selected>Red</option>
+                <option value="Green" selected>Green</option>
+                <option value="Blue" selected>Blue</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="select-11">Custom Options</label>
+              <select class="form-control selectize-custom" id="select-11" multiple></select>
+            </div>
+          </form>
+          <form class="form-inline my-2">
+            <label class="mr-2" for="select-12">Inline</label>
+            <select class="form-control w-50 selectize-multiple" id="select-12" multiple>
+              <option value="Red" selected>Red</option>
+              <option value="Green" selected>Green</option>
+              <option value="Blue" selected>Blue</option>
+            </select>
+          </form>
+          <form class="form-inline my-2">
+            <label class="mr-2" for="select-14">Input Group</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Color</div>
+              </div>
+              <select class="form-control selectize-multiple" id="select-14" multiple>
+                <option value="Red" selected>Red</option>
+                <option value="Green" selected>Green</option>
+                <option value="Blue" selected>Blue</option>
+              </select>
+              <div class="input-group-append">
+                <div class="input-group-text">!</div>
+              </div>
             </div>
           </form>
         </div>

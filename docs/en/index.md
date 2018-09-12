@@ -7,6 +7,7 @@ Selectize Theme (SCSS) based on the Bootstrap 4 components.
 - [Dependencies](#dependencies)
 - [Install](#install)
 - [Importing](#importing)
+- [Usage](#usage)
 - [Theming](#theming)
 - [Examples](#examples)
 
@@ -17,7 +18,7 @@ Selectize Theme (SCSS) based on the Bootstrap 4 components.
 
 ## Install
 
-- [Download the latest release](https://github.com/const-se/selectize-bootstrap4-theme/archive/v2.0.0.zip)
+- [Download the latest release](https://github.com/const-se/selectize-bootstrap4-theme/archive/v2.0.1.zip)
 - Clone the repo: `git clone git@github.com:const-se/selectize-bootstrap4-theme.git`
 - Install with [npm](https://www.npmjs.com/): `npm install selectize-bootstrap4-theme`
 - Install with [yarn](https://yarnpkg.com/): `yarn add selectize-bootstrap4-theme`

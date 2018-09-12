@@ -13,42 +13,32 @@ html
                     h2 Single Select
                     form
                         div(class='form-group')
-                            select(class='form-control selectize-single')
+                            label(for='select-1') Regular
+                            select(id='select-1' class='form-control selectize-single')
                                 option(value selected) Choose...
                                 each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
                                     option(value=option)= option
-                div(class='col-6')
-                    h2 Multiple Select
-                    form
                         div(class='form-group')
-                            select(class='form-control selectize-multiple' multiple)
-                                each option in ['Red', 'Green', 'Blue']
-                                    option(value=option selected)= option
-            div(class='row my-5')
-                div(class='col-6')
-                    h2 Inline Form
-                    form(class='form-inline')
-                        select(class='form-control w-50 selectize-single')
-                            option(value selected) Choose...
-                            each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
-                                option(value=option)= option
-                        input(type='text' class='form-control mx-2' placeholder='Some text input')
-                div(class='col-6')
-                    h2 Disabled Select
-                    form
-                        select(class='form-control selectize-single' disabled)
-                            option(value selected) Choose...
-            div(class='row my-5')
-                div(class='col-6')
-                    h2 Custom Options
-                    form
+                            label(for='select-2') Large
+                            select(id='select-2' class='form-control form-control-lg selectize-single')
+                                option(value selected) Choose...
+                                each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
+                                    option(value=option)= option
                         div(class='form-group')
-                            select(class='form-control selectize-custom' multiple)
-                div(class='col-6')
-                    h2 Option Groups
-                    form
+                            label(for='select-3') Small
+                            select(id='select-3' class='form-control form-control-sm selectize-single')
+                                option(value selected) Choose...
+                                each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
+                                    option(value=option)= option
                         div(class='form-group')
-                            select(class='form-control selectize-single')
+                            label(for='select-4') RTL
+                            select(id='select-4' class='form-control selectize-single' dir='rtl')
+                                option(value selected) Choose...
+                                each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
+                                    option(value=option)= option
+                        div(class='form-group')
+                            label(for='select-5') Option Groups
+                            select(id='select-5' class='form-control selectize-single')
                                 option(value selected) Choose...
                                 optgroup(label='Climbing')
                                     each option, index in ['Bolts', 'Cams', 'Nuts', 'Pitons', 'Sling', 'Stoppers']
@@ -56,30 +46,64 @@ html
                                 optgroup(label='Skiing')
                                     each option, index in ['Poles', 'Skins', 'Skis']
                                         option(value='skiing' + index)= option
-            div(class='row my-5')
-                div(class='col-6')
-                    h2 Input Groups
-                    form
+                    form(class='form-inline my-2')
+                        label(for='select-6' class='mr-2') Inline
+                        select(id='select-6' class='form-control w-50 selectize-single')
+                            option(value selected) Choose...
+                            each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
+                                option(value=option)= option
+                    form(class='form-inline my-2')
+                        label(for='select-13' class='mr-2') Input Group
                         div(class='input-group')
                             div(class='input-group-prepend')
-                                div(class='input-group-text') @
-                            select(class='form-control selectize-single')
+                                div(class='input-group-text') Color
+                            select(id='select-13' class='form-control selectize-single')
                                 option(value selected) Choose...
-                                each option, index in ['john@example.com', 'johndoe@example.com']
-                                    option(value=index)= option
+                                each option in ['Red', 'Yellow', 'Green', 'Blue', 'Purple', 'Magenta', 'Pink', 'Black', 'White', 'Gray']
+                                    option(value=option)= option
+                            div(class='input-group-append')
+                                div(class='input-group-text') !
                 div(class='col-6')
-                    h2 Sizing
+                    h2 Multiple Select
                     form
                         div(class='form-group')
-                            select(class='form-control form-control-lg selectize-single')
-                                option(value selected) Choose...
+                            label(for='select-7') Regular
+                            select(id='select-7' class='form-control selectize-multiple' multiple)
                                 each option in ['Red', 'Green', 'Blue']
-                                    option(value=index)= option
+                                    option(value=option selected)= option
                         div(class='form-group')
-                            select(class='form-control form-control-sm selectize-single')
-                                option(value selected) Choose...
+                            label(for='select-8') Large
+                            select(id='select-8' class='form-control form-control-lg selectize-multiple' multiple)
                                 each option in ['Red', 'Green', 'Blue']
-                                    option(value=index)= option
+                                    option(value=option selected)= option
+                        div(class='form-group')
+                            label(for='select-9') Small
+                            select(id='select-9' class='form-control form-control-sm selectize-multiple' multiple)
+                                each option in ['Red', 'Green', 'Blue']
+                                    option(value=option selected)= option
+                        div(class='form-group')
+                            label(for='select-10') RTL
+                            select(id='select-10' class='form-control selectize-multiple' multiple dir='rtl')
+                                each option in ['Red', 'Green', 'Blue']
+                                    option(value=option selected)= option
+                        div(class='form-group')
+                            label(for='select-11') Custom Options
+                            select(id='select-11' class='form-control selectize-custom' multiple)
+                    form(class='form-inline my-2')
+                        label(for='select-12' class='mr-2') Inline
+                        select(id='select-12' class='form-control w-50 selectize-multiple' multiple)
+                            each option in ['Red', 'Green', 'Blue']
+                                option(value=option selected)= option
+                    form(class='form-inline my-2')
+                        label(for='select-14' class='mr-2') Input Group
+                        div(class='input-group')
+                            div(class='input-group-prepend')
+                                div(class='input-group-text') Color
+                            select(id='select-14' class='form-control selectize-multiple' multiple)
+                                each option in ['Red', 'Green', 'Blue']
+                                    option(value=option selected)= option
+                            div(class='input-group-append')
+                                div(class='input-group-text') !
         script(src='https://code.jquery.com/jquery-3.3.1.js')
         script(src='js/selectize.js')
         script.
