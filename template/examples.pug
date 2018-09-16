@@ -46,6 +46,16 @@ html
                                 optgroup(label='Skiing')
                                     each option, index in ['Poles', 'Skins', 'Skis']
                                         option(value='skiing' + index)= option
+                        div(class='form-group')
+                            label(for='select-15') Valid Select Value
+                            select(id='select-15' class='form-control is-valid selectize-single')
+                                option(value='green' selected) Green
+                            div(class='valid-feedback') Looks good!
+                        div(class='form-group')
+                            label(for='select-16') Invalid Select Value
+                            select(id='select-16' class='form-control is-invalid selectize-single')
+                                option(value='red' selected) Red
+                            div(class='invalid-feedback') Please provide valid color.
                     form(class='form-inline my-2')
                         label(for='select-6' class='mr-2') Inline
                         select(id='select-6' class='form-control w-50 selectize-single')
@@ -89,6 +99,16 @@ html
                         div(class='form-group')
                             label(for='select-11') Custom Options
                             select(id='select-11' class='form-control selectize-custom' multiple)
+                        div(class='form-group')
+                            label(for='select-17') Valid Select Value
+                            select(id='select-17' class='form-control is-valid selectize-multiple' multiple)
+                                option(value='green' selected) Green
+                            div(class='valid-feedback') Looks good!
+                        div(class='form-group')
+                            label(for='select-18') Invalid Select Value
+                            select(id='select-18' class='form-control is-invalid selectize-multiple' multiple)
+                                option(value='red' selected) Red
+                            div(class='invalid-feedback') Please provide valid color.
                     form(class='form-inline my-2')
                         label(for='select-12' class='mr-2') Inline
                         select(id='select-12' class='form-control w-50 selectize-multiple' multiple)

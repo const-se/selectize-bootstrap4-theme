@@ -1,5 +1,5 @@
 /*!
- * Selectize Theme for Bootstrap 4 v2.0.1
+ * Selectize Theme for Bootstrap 4 v2.0.2
  *
  * Copyright 2018 Constantine Seleznyoff <const.seoff@gmail.com>
  *
@@ -273,6 +273,24 @@
 
 .form-control.selectize-control.rtl.multi .selectize-input .item {
   margin: 0 0 0 3px;
+}
+
+.form-control.selectize-control.is-valid .selectize-input {
+  border-color: #28a745;
+}
+
+.form-control.selectize-control.is-valid .selectize-input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-control.selectize-control.is-invalid .selectize-input {
+  border-color: #dc3545;
+}
+
+.form-control.selectize-control.is-invalid .selectize-input:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .form-control-lg.selectize-control {

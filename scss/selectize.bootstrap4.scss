@@ -1,5 +1,5 @@
 /*!
- * Selectize Theme for Bootstrap 4 v2.0.1
+ * Selectize Theme for Bootstrap 4 v2.0.2
  *
  * Copyright 2018 Constantine Seleznyoff <const.seoff@gmail.com>
  *
@@ -20,6 +20,7 @@
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 @import "variables";
+@import "mixins";
 
 .form-control {
   &.selectize-control {
@@ -302,66 +303,21 @@
         }
       }
     }
+
+    @include selectize-control-validation-state('valid', $selectize-input-border-color-valid, $selectize-input-box-shadow-spread-valid);
+    @include selectize-control-validation-state('invalid', $selectize-input-border-color-invalid, $selectize-input-box-shadow-spread-invalid);
   }
 }
 
 .form-control-lg {
   &.selectize-control {
-    height: $selectize-input-height-lg;
-    padding: 0;
-
-    .selectize-input {
-      font-size: $selectize-input-font-size-lg;
-      padding: $selectize-input-padding-y-lg $selectize-input-padding-x-lg;
-      @include border-radius($selectize-input-border-radius-lg);
-    }
-
-    &.single {
-      .selectize-input {
-        padding-right: calc(#{$selectize-input-padding-x-lg} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y-lg});
-      }
-
-      &.rtl {
-        .selectize-input {
-          padding-left: calc(#{$selectize-input-padding-x-lg} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y-lg});
-          padding-right: $selectize-input-padding-x-lg;
-        }
-      }
-    }
-
-    &.multi {
-      min-height: $selectize-input-height-lg;
-    }
+    @include selectize-control-size($selectize-input-height-lg, $selectize-input-border-radius-lg, $selectize-input-font-size-lg, $selectize-input-padding-x-lg, $selectize-input-padding-y-lg);
   }
 }
 
 .form-control-sm {
   &.selectize-control {
-    height: $selectize-input-height-sm;
-    padding: 0;
-
-    .selectize-input {
-      font-size: $selectize-input-font-size-sm;
-      padding: $selectize-input-padding-y-sm $selectize-input-padding-x-sm;
-      @include border-radius($selectize-input-border-radius-sm);
-    }
-
-    &.single {
-      .selectize-input {
-        padding-right: calc(#{$selectize-input-padding-x-sm} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y-sm});
-      }
-
-      &.rtl {
-        .selectize-input {
-          padding-left: calc(#{$selectize-input-padding-x-sm} + #{$selectize-input-arrow-width} + #{$selectize-input-padding-y-sm});
-          padding-right: $selectize-input-padding-x-sm;
-        }
-      }
-    }
-
-    &.multi {
-      min-height: $selectize-input-height-sm;
-    }
+    @include selectize-control-size($selectize-input-height-sm, $selectize-input-border-radius-sm, $selectize-input-font-size-sm, $selectize-input-padding-x-sm, $selectize-input-padding-y-sm);
   }
 }
 
