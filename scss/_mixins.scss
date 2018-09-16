@@ -1,0 +1,42 @@
+@mixin selectize-control-size($height, $border-radius, $font-size, $padding-x, $padding-y) {
+  height: $height;
+  padding: 0;
+
+  .selectize-input {
+    font-size: $font-size;
+    padding: $padding-y $padding-x;
+    @include border-radius($border-radius);
+  }
+
+  &.single {
+    $arrow-padding: calc(#{$padding-x} + #{$selectize-input-arrow-width} + #{$padding-y});
+
+    .selectize-input {
+      padding-right: $arrow-padding;
+    }
+
+    &.rtl {
+      .selectize-input {
+        padding-left: $arrow-padding;
+        padding-right: $padding-x;
+      }
+    }
+  }
+
+  &.multi {
+    min-height: $height;
+  }
+}
+
+@mixin selectize-control-validation-state($state, $color, $spread) {
+  &.is-#{$state} {
+    .selectize-input {
+      border-color: $color;
+
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 0 $spread rgba($color, .25);
+      }
+    }
+  }
+}

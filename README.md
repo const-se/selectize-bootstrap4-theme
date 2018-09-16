@@ -24,7 +24,7 @@
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/const-se/selectize-bootstrap4-theme/archive/v2.0.1.zip)
+- [Download the latest release](https://github.com/const-se/selectize-bootstrap4-theme/archive/v2.0.2.zip)
 - Clone the repo: `git clone git@github.com:const-se/selectize-bootstrap4-theme.git`
 - Install with [npm](https://www.npmjs.com/): `npm install selectize-bootstrap4-theme`
 - Install with [yarn](https://yarnpkg.com/): `yarn add selectize-bootstrap4-theme`
@@ -35,8 +35,8 @@ Read the [Documentation](docs/en/index.md) for more information.
 ## TODO
 
 - Attribute `readonly` support
+- Pseudo-classes `:valid`, `:invalid` support
 - Bootstrap class `custom-select` support
-- Bootstrap form validation support
 - Selectize plugin styles support
 
 ## Creators
