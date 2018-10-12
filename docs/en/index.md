@@ -29,7 +29,7 @@ Selectize Theme (SCSS) based on the Bootstrap 4 components.
 Import the theme into your SCSS:
 
 ```scss
-@import "node_modules/selectize-bootstrap4-theme/scss/selectise.bootstrap4";
+@import "node_modules/selectize-bootstrap4-theme/scss/selectize.bootstrap4";
 ```
 
 ## Usage
@@ -73,7 +73,7 @@ Here's an example that changes the `background-color` for the Selectize input:
 $selectize-input-bg: #111;
 
 // Selectize Theme and its default variables
-@import "node_modules/selectize-bootstrap4-theme/scss/selectise.bootstrap4";
+@import "node_modules/selectize-bootstrap4-theme/scss/selectize.bootstrap4";
 ```
 
 ## Examples
